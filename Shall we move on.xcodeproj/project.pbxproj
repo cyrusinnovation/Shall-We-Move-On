@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3658FE7E16417696007C96AB /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3658FE7D16417696007C96AB /* blueButton.png */; };
 		366738A3163B14AC00F76780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A2163B14AC00F76780 /* UIKit.framework */; };
 		366738A5163B14AC00F76780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A4163B14AC00F76780 /* Foundation.framework */; };
 		366738A7163B14AC00F76780 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A6163B14AC00F76780 /* CoreGraphics.framework */; };
@@ -18,7 +19,7 @@
 		366738B9163B14AC00F76780 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 366738B8163B14AC00F76780 /* Default-568h@2x.png */; };
 		366738BC163B14AC00F76780 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366738BA163B14AC00F76780 /* MainStoryboard_iPhone.storyboard */; };
 		366738BF163B14AC00F76780 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 366738BD163B14AC00F76780 /* MainStoryboard_iPad.storyboard */; };
-		366738C2163B14AC00F76780 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366738C1163B14AC00F76780 /* ViewController.m */; };
+		366738C2163B14AC00F76780 /* CalibrateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 366738C1163B14AC00F76780 /* CalibrateViewController.m */; };
 		366738CA163B14AC00F76780 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738C9163B14AC00F76780 /* SenTestingKit.framework */; };
 		366738CB163B14AC00F76780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A2163B14AC00F76780 /* UIKit.framework */; };
 		366738CC163B14AC00F76780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A4163B14AC00F76780 /* Foundation.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3658FE7D16417696007C96AB /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueButton.png; path = ../../../../Downloads/UICatalog/images/blueButton.png; sourceTree = "<group>"; };
 		3667389E163B14AB00F76780 /* Shall we move on.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shall we move on.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		366738A2163B14AC00F76780 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		366738A4163B14AC00F76780 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -52,8 +54,8 @@
 		366738B8163B14AC00F76780 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		366738BB163B14AC00F76780 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		366738BE163B14AC00F76780 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		366738C0163B14AC00F76780 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		366738C1163B14AC00F76780 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		366738C0163B14AC00F76780 /* CalibrateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalibrateViewController.h; sourceTree = "<group>"; };
+		366738C1163B14AC00F76780 /* CalibrateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalibrateViewController.m; sourceTree = "<group>"; };
 		366738C8163B14AC00F76780 /* Shall we move onTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shall we move onTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		366738C9163B14AC00F76780 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		366738D1163B14AC00F76780 /* Shall we move onTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Shall we move onTests-Info.plist"; sourceTree = "<group>"; };
@@ -123,8 +125,8 @@
 				366738B2163B14AC00F76780 /* AppDelegate.m */,
 				366738BA163B14AC00F76780 /* MainStoryboard_iPhone.storyboard */,
 				366738BD163B14AC00F76780 /* MainStoryboard_iPad.storyboard */,
-				366738C0163B14AC00F76780 /* ViewController.h */,
-				366738C1163B14AC00F76780 /* ViewController.m */,
+				366738C0163B14AC00F76780 /* CalibrateViewController.h */,
+				366738C1163B14AC00F76780 /* CalibrateViewController.m */,
 				366738A9163B14AC00F76780 /* Supporting Files */,
 			);
 			path = "Shall we move on";
@@ -133,6 +135,7 @@
 		366738A9163B14AC00F76780 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3658FE7D16417696007C96AB /* blueButton.png */,
 				366738AA163B14AC00F76780 /* Shall we move on-Info.plist */,
 				366738AB163B14AC00F76780 /* InfoPlist.strings */,
 				366738AE163B14AC00F76780 /* main.m */,
@@ -240,6 +243,7 @@
 				366738B9163B14AC00F76780 /* Default-568h@2x.png in Resources */,
 				366738BC163B14AC00F76780 /* MainStoryboard_iPhone.storyboard in Resources */,
 				366738BF163B14AC00F76780 /* MainStoryboard_iPad.storyboard in Resources */,
+				3658FE7E16417696007C96AB /* blueButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +280,7 @@
 			files = (
 				366738AF163B14AC00F76780 /* main.m in Sources */,
 				366738B3163B14AC00F76780 /* AppDelegate.m in Sources */,
-				366738C2163B14AC00F76780 /* ViewController.m in Sources */,
+				366738C2163B14AC00F76780 /* CalibrateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +465,7 @@
 				366738DC163B14AC00F76780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		366738DD163B14AC00F76780 /* Build configuration list for PBXNativeTarget "Shall we move onTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +474,7 @@
 				366738DF163B14AC00F76780 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
