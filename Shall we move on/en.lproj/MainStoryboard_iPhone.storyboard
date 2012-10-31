@@ -26,11 +26,27 @@
                                     <segue destination="2" kind="push" id="a7E-MB-Jzj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ips-IB-Ajh">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Listen">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BHQ-65-eea" kind="push" id="5jT-Ck-bqf"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PtO-6j-Chc" firstAttribute="leading" secondItem="aZb-GU-DSd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="84W-Cu-DRA"/>
+                            <constraint firstAttribute="trailing" secondItem="Ips-IB-Ajh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Brf-5v-LEo"/>
                             <constraint firstItem="PtO-6j-Chc" firstAttribute="top" secondItem="aZb-GU-DSd" secondAttribute="top" constant="103" id="TFu-2P-eep"/>
+                            <constraint firstItem="Ips-IB-Ajh" firstAttribute="leading" secondItem="aZb-GU-DSd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="clT-G9-T5B"/>
+                            <constraint firstAttribute="bottom" secondItem="Ips-IB-Ajh" secondAttribute="bottom" constant="124" id="fPf-zd-2Uz"/>
                             <constraint firstAttribute="trailing" secondItem="PtO-6j-Chc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tB6-4N-zUl"/>
                         </constraints>
                     </view>
@@ -39,6 +55,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uba-Dz-JRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="182" y="-247"/>
+        </scene>
+        <!--View Controller - LIstening-->
+        <scene sceneID="6Gs-nU-LwA">
+            <objects>
+                <viewController id="BHQ-65-eea" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jVl-cD-Hfp">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="LIstening" id="X74-Vf-ehd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u3Y-F2-Pbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="723" y="87"/>
         </scene>
         <!--Calibrate View Controller - Calibrate-->
         <scene sceneID="5">
@@ -69,7 +100,11 @@
                                     <action selector="durationChanged:" destination="2" eventType="valueChanged" id="IfV-X7-Hz6"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIR-5H-Fvs">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIR-5H-Fvs">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NsX-zH-tGy"/>
+                                    <constraint firstAttribute="width" constant="42" id="R73-0Y-YvM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -117,6 +152,22 @@
             <point key="canvasLocation" x="-344" y="-247"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CalibrateViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalibrateViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="change:"/>
+                <relationship kind="action" name="durationChanged:"/>
+                <relationship kind="outlet" name="calibrateButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="durationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="durationSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="secondsA" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

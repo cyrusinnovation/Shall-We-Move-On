@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3658FE7E16417696007C96AB /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3658FE7D16417696007C96AB /* blueButton.png */; };
+		3658FE811641C6B2007C96AB /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3658FE801641C6B2007C96AB /* whiteButton.png */; };
 		366738A3163B14AC00F76780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A2163B14AC00F76780 /* UIKit.framework */; };
 		366738A5163B14AC00F76780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A4163B14AC00F76780 /* Foundation.framework */; };
 		366738A7163B14AC00F76780 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A6163B14AC00F76780 /* CoreGraphics.framework */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		3658FE7D16417696007C96AB /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueButton.png; path = ../../../../Downloads/UICatalog/images/blueButton.png; sourceTree = "<group>"; };
+		3658FE801641C6B2007C96AB /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteButton.png; path = ../../../../Downloads/UICatalog/images/whiteButton.png; sourceTree = "<group>"; };
 		3667389E163B14AB00F76780 /* Shall we move on.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shall we move on.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		366738A2163B14AC00F76780 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		366738A4163B14AC00F76780 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,6 +137,7 @@
 		366738A9163B14AC00F76780 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3658FE801641C6B2007C96AB /* whiteButton.png */,
 				3658FE7D16417696007C96AB /* blueButton.png */,
 				366738AA163B14AC00F76780 /* Shall we move on-Info.plist */,
 				366738AB163B14AC00F76780 /* InfoPlist.strings */,
@@ -244,6 +247,7 @@
 				366738BC163B14AC00F76780 /* MainStoryboard_iPhone.storyboard in Resources */,
 				366738BF163B14AC00F76780 /* MainStoryboard_iPad.storyboard in Resources */,
 				3658FE7E16417696007C96AB /* blueButton.png in Resources */,
+				3658FE811641C6B2007C96AB /* whiteButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
