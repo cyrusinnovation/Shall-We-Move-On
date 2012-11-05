@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3658FE7E16417696007C96AB /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3658FE7D16417696007C96AB /* blueButton.png */; };
 		3658FE811641C6B2007C96AB /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3658FE801641C6B2007C96AB /* whiteButton.png */; };
+		3658FE841642DA7E007C96AB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3658FE831642DA7E007C96AB /* AVFoundation.framework */; };
+		3658FE8C1642DBFC007C96AB /* ListeningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3658FE8B1642DBFC007C96AB /* ListeningViewController.m */; };
+		3658FE8F1642F4B3007C96AB /* ListeningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3658FE8E1642F4B3007C96AB /* ListeningView.m */; };
+		3658FE911643234F007C96AB /* shwm.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 3658FE901643234F007C96AB /* shwm.aiff */; };
 		366738A3163B14AC00F76780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A2163B14AC00F76780 /* UIKit.framework */; };
 		366738A5163B14AC00F76780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A4163B14AC00F76780 /* Foundation.framework */; };
 		366738A7163B14AC00F76780 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A6163B14AC00F76780 /* CoreGraphics.framework */; };
@@ -41,6 +45,12 @@
 /* Begin PBXFileReference section */
 		3658FE7D16417696007C96AB /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueButton.png; path = ../../../../Downloads/UICatalog/images/blueButton.png; sourceTree = "<group>"; };
 		3658FE801641C6B2007C96AB /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteButton.png; path = ../../../../Downloads/UICatalog/images/whiteButton.png; sourceTree = "<group>"; };
+		3658FE831642DA7E007C96AB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3658FE8A1642DBFC007C96AB /* ListeningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListeningViewController.h; sourceTree = "<group>"; };
+		3658FE8B1642DBFC007C96AB /* ListeningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListeningViewController.m; sourceTree = "<group>"; };
+		3658FE8D1642F4B3007C96AB /* ListeningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListeningView.h; sourceTree = "<group>"; };
+		3658FE8E1642F4B3007C96AB /* ListeningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListeningView.m; sourceTree = "<group>"; };
+		3658FE901643234F007C96AB /* shwm.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = shwm.aiff; sourceTree = "<group>"; };
 		3667389E163B14AB00F76780 /* Shall we move on.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shall we move on.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		366738A2163B14AC00F76780 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		366738A4163B14AC00F76780 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3658FE841642DA7E007C96AB /* AVFoundation.framework in Frameworks */,
 				366738A3163B14AC00F76780 /* UIKit.framework in Frameworks */,
 				366738A5163B14AC00F76780 /* Foundation.framework in Frameworks */,
 				366738A7163B14AC00F76780 /* CoreGraphics.framework in Frameworks */,
@@ -93,6 +104,7 @@
 		36673893163B14AB00F76780 = {
 			isa = PBXGroup;
 			children = (
+				3658FE831642DA7E007C96AB /* AVFoundation.framework */,
 				366738A8163B14AC00F76780 /* Shall we move on */,
 				366738CF163B14AC00F76780 /* Shall we move onTests */,
 				366738A1163B14AB00F76780 /* Frameworks */,
@@ -130,6 +142,10 @@
 				366738C0163B14AC00F76780 /* CalibrateViewController.h */,
 				366738C1163B14AC00F76780 /* CalibrateViewController.m */,
 				366738A9163B14AC00F76780 /* Supporting Files */,
+				3658FE8A1642DBFC007C96AB /* ListeningViewController.h */,
+				3658FE8B1642DBFC007C96AB /* ListeningViewController.m */,
+				3658FE8D1642F4B3007C96AB /* ListeningView.h */,
+				3658FE8E1642F4B3007C96AB /* ListeningView.m */,
 			);
 			path = "Shall we move on";
 			sourceTree = "<group>";
@@ -137,6 +153,7 @@
 		366738A9163B14AC00F76780 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3658FE901643234F007C96AB /* shwm.aiff */,
 				3658FE801641C6B2007C96AB /* whiteButton.png */,
 				3658FE7D16417696007C96AB /* blueButton.png */,
 				366738AA163B14AC00F76780 /* Shall we move on-Info.plist */,
@@ -248,6 +265,7 @@
 				366738BF163B14AC00F76780 /* MainStoryboard_iPad.storyboard in Resources */,
 				3658FE7E16417696007C96AB /* blueButton.png in Resources */,
 				3658FE811641C6B2007C96AB /* whiteButton.png in Resources */,
+				3658FE911643234F007C96AB /* shwm.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +303,8 @@
 				366738AF163B14AC00F76780 /* main.m in Sources */,
 				366738B3163B14AC00F76780 /* AppDelegate.m in Sources */,
 				366738C2163B14AC00F76780 /* CalibrateViewController.m in Sources */,
+				3658FE8C1642DBFC007C96AB /* ListeningViewController.m in Sources */,
+				3658FE8F1642F4B3007C96AB /* ListeningView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

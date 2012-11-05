@@ -56,16 +56,30 @@
             </objects>
             <point key="canvasLocation" x="182" y="-247"/>
         </scene>
-        <!--View Controller - LIstening-->
+        <!--Listening View Controller - Listening-->
         <scene sceneID="6Gs-nU-LwA">
             <objects>
-                <viewController id="BHQ-65-eea" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="jVl-cD-Hfp">
+                <viewController id="BHQ-65-eea" customClass="ListeningViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jVl-cD-Hfp" customClass="ListeningView">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3n2-dh-uh3">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="9QE-9H-rqC"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3n2-dh-uh3" firstAttribute="top" secondItem="jVl-cD-Hfp" secondAttribute="top" constant="220" id="wjj-px-doX"/>
+                            <constraint firstItem="3n2-dh-uh3" firstAttribute="leading" secondItem="jVl-cD-Hfp" secondAttribute="leading" constant="77" id="xWV-Gm-kg0"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="LIstening" id="X74-Vf-ehd"/>
+                    <navigationItem key="navigationItem" title="Listening" id="X74-Vf-ehd"/>
+                    <connections>
+                        <outlet property="listeningLevel" destination="3n2-dh-uh3" id="KbW-kU-BOE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3Y-F2-Pbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,22 +166,6 @@
             <point key="canvasLocation" x="-344" y="-247"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CalibrateViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalibrateViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="change:"/>
-                <relationship kind="action" name="durationChanged:"/>
-                <relationship kind="outlet" name="calibrateButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="durationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="durationSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="secondsA" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
