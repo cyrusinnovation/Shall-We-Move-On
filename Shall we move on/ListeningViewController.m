@@ -46,7 +46,10 @@
   		[recorder prepareToRecord];
   		recorder.meteringEnabled = YES;
   		[recorder record];
-        levelTimer = [NSTimer scheduledTimerWithTimeInterval: 0.03 target: self selector: @selector(levelTimerCallback:) userInfo: nil repeats: YES];
+        levelTimer = [NSTimer scheduledTimerWithTimeInterval: 0.25 target: self selector: @selector(levelTimerCallback:) userInfo: nil repeats: YES];
+        
+        timeoutTimer = [NSTimer scheduledTimerWithTimeInterval: 0.03 target: self selector: @selector(timeoutTimerCallback:) userInfo: nil repeats: YES];
+        
 
   	} else
   		NSLog([error description]);
@@ -59,11 +62,33 @@
     
     float progressLevel;
     progressLevel = (160 - abs([recorder averagePowerForChannel:0])) * 0.006;
-    NSLog(@"%f", progressLevel);
+    NSLog(@"%f", self.timeoutLevel.progress);
     
     self.listeningLevel.progress = progressLevel;
+    
+    if (progressLevel < 0.7) {
+        self.timeoutLevel.progress += 0.025;
+    } else {
+        self.timeoutLevel.progress = 0.0;
+    }
+    
+    if (self.timeoutLevel.progress > 0.99) {
+        [levelTimer invalidate];
+        levelTimer = nil;
+
+        SystemSoundID completeSound;
+        NSURL *audioPath = [[NSBundle mainBundle] URLForResource:@"shwm" withExtension:@"aiff"];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)audioPath, &completeSound);
+        AudioServicesPlaySystemSound (completeSound);
+    }
+    
 	//NSLog(@"Average input: %f Peak input: %f", [recorder averagePowerForChannel:0], [recorder peakPowerForChannel:0]);
 }
+
+- (void)timeoutTimerCallback:(NSTimer *)timer {
+    //self.timeoutLevel.progress += 0.025;
+}
+
 
 
 

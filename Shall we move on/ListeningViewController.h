@@ -13,9 +13,14 @@
 @interface ListeningViewController : UIViewController {
     AVAudioRecorder *recorder;
     NSTimer *levelTimer;
+    NSTimer *timeoutTimer;
+    float timeout;
 }
 
 - (void)levelTimerCallback:(NSTimer *)timer;
+- (void)timeoutTimerCallback:(NSTimer *)timer;
+
+@property (weak, nonatomic) IBOutlet UIProgressView *timeoutLevel;
 
 @property (weak, nonatomic) IBOutlet UIProgressView *listeningLevel;
 @end
