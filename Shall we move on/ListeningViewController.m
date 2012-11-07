@@ -41,14 +41,17 @@
     
   	recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:&error];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    averageLevel = [defaults floatForKey:@"calibratedAverageLevel"];
+    
     
   	if (recorder) {
   		[recorder prepareToRecord];
   		recorder.meteringEnabled = YES;
   		[recorder record];
-        levelTimer = [NSTimer scheduledTimerWithTimeInterval: 0.25 target: self selector: @selector(levelTimerCallback:) userInfo: nil repeats: YES];
+        levelTimer = [NSTimer scheduledTimerWithTimeInterval: 0.03 target: self selector: @selector(levelTimerCallback:) userInfo: nil repeats: YES];
         
-        timeoutTimer = [NSTimer scheduledTimerWithTimeInterval: 0.03 target: self selector: @selector(timeoutTimerCallback:) userInfo: nil repeats: YES];
+        timeoutTimer = [NSTimer scheduledTimerWithTimeInterval: 0.25 target: self selector: @selector(timeoutTimerCallback:) userInfo: nil repeats: YES];
         
 
   	} else
@@ -61,13 +64,15 @@
     //((ListeningView*)self.view).intencity = [recorder averagePowerForChannel:0];
     
     float progressLevel;
-    progressLevel = (160 - abs([recorder averagePowerForChannel:0])) * 0.006;
-    NSLog(@"%f", self.timeoutLevel.progress);
+    
+    float averagePower = [recorder averagePowerForChannel:0];
+    progressLevel = (160 - abs(averagePower)) * 0.006;
+    NSLog(@"power: %f, level: %f", averagePower, averageLevel);
     
     self.listeningLevel.progress = progressLevel;
     
-    if (progressLevel < 0.7) {
-        self.timeoutLevel.progress += 0.025;
+    if (averagePower < averageLevel) {
+        self.timeoutLevel.progress += 0.005;
     } else {
         self.timeoutLevel.progress = 0.0;
     }

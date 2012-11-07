@@ -7,18 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import <CoreAudio/CoreAudioTypes.h>
 
-@interface CalibrateViewController : UIViewController {
+@interface CalibrateViewController : UIViewController {    
+    AVAudioRecorder *recorder;
+    NSTimer *levelTimer;
     int counterA;
     bool startA;
     IBOutlet UILabel *secondsA;
     NSTimer *timerA;
+    float averageLevel;
+    int averageStep;
 }
 @property (weak, nonatomic) IBOutlet UIButton *calibrateButton;
 - (IBAction)durationChanged:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 
 - (IBAction)change:(id)sender;
-@property (weak, nonatomic) IBOutlet UISlider *durationSlider;
-@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
+  @property (weak, nonatomic) IBOutlet UILabel *durationLabel;
 - (void) updateTimer;
+-(void)startRecorder;
 @end

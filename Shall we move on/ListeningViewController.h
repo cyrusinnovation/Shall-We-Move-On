@@ -15,6 +15,7 @@
     NSTimer *levelTimer;
     NSTimer *timeoutTimer;
     float timeout;
+    float averageLevel;
 }
 
 - (void)levelTimerCallback:(NSTimer *)timer;
