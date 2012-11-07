@@ -17,9 +17,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	UIImage *image = [UIImage imageNamed:@"blueButton.png"];
-    UIImage *stretchedImage = [image stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-    [self.calibrateButton setBackgroundImage:stretchedImage forState:UIControlStateNormal];
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"back"]];
+    self.view.backgroundColor = background;
+    [self.calibrateButton setActionSheetButtonWithColor: [UIColor doneButtonColor]];
+    
 }
 
 - (void)awakeFromNib{
@@ -112,8 +113,10 @@
     if(startA == TRUE) //Check that another instance is not already running.
     {
         self.startRecorder;
-       // secondsA.text = @"10";
+
         [self.calibrateButton setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.calibrateButton setActionSheetButtonWithColor: [UIColor redColor]];
+
         
         averageLevel = 0;
         averageStep = 1;

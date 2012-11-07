@@ -5,15 +5,18 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="p0g-Pt-Mr2">
             <objects>
-                <viewController id="4ja-EM-nEx" sceneMemberID="viewController">
+                <viewController id="4ja-EM-nEx" customClass="MainViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aZb-GU-DSd">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtO-6j-Chc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtO-6j-Chc" customClass="UIGlossyButton">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="FVL-AS-dO7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Calibrate">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -26,7 +29,10 @@
                                     <segue destination="2" kind="push" id="a7E-MB-Jzj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ips-IB-Ajh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ips-IB-Ajh" customClass="UIGlossyButton">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3vv-Gf-AMy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Listen">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,13 +50,17 @@
                         <constraints>
                             <constraint firstItem="PtO-6j-Chc" firstAttribute="leading" secondItem="aZb-GU-DSd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="84W-Cu-DRA"/>
                             <constraint firstAttribute="trailing" secondItem="Ips-IB-Ajh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Brf-5v-LEo"/>
-                            <constraint firstItem="PtO-6j-Chc" firstAttribute="top" secondItem="aZb-GU-DSd" secondAttribute="top" constant="103" id="TFu-2P-eep"/>
                             <constraint firstItem="Ips-IB-Ajh" firstAttribute="leading" secondItem="aZb-GU-DSd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="clT-G9-T5B"/>
                             <constraint firstAttribute="bottom" secondItem="Ips-IB-Ajh" secondAttribute="bottom" constant="124" id="fPf-zd-2Uz"/>
                             <constraint firstAttribute="trailing" secondItem="PtO-6j-Chc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tB6-4N-zUl"/>
+                            <constraint firstItem="PtO-6j-Chc" firstAttribute="top" secondItem="aZb-GU-DSd" secondAttribute="top" constant="96" id="zAJ-Z4-fB5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RWY-dU-q0q"/>
+                    <connections>
+                        <outlet property="calibrateButton" destination="PtO-6j-Chc" id="dkI-Cs-AL2"/>
+                        <outlet property="listenButton" destination="Ips-IB-Ajh" id="oeR-WC-hui"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uba-Dz-JRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,7 +108,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z92-v2-5Pw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z92-v2-5Pw" customClass="UIGlossyButton">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="t2x-we-sjg"/>
                                 </constraints>
@@ -170,6 +180,42 @@
             <point key="canvasLocation" x="-344" y="-247"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CalibrateViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CalibrateViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="change:"/>
+                <relationship kind="action" name="durationChanged:"/>
+                <relationship kind="outlet" name="calibrateButton" candidateClass="UIGlossyButton"/>
+                <relationship kind="outlet" name="durationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="levelLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="secondsA" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ListeningView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListeningView.h"/>
+        </class>
+        <class className="ListeningViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListeningViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="listeningLevel" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="timeoutLevel" candidateClass="UIProgressView"/>
+            </relationships>
+        </class>
+        <class className="MainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="calibrateButton" candidateClass="UIGlossyButton"/>
+                <relationship kind="outlet" name="listenButton" candidateClass="UIGlossyButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIGlossyButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIGlossyButton.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

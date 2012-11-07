@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <CoreAudio/CoreAudioTypes.h>
+#import "UIGlossyButton.h"
 
 @interface CalibrateViewController : UIViewController {    
     AVAudioRecorder *recorder;
@@ -20,7 +21,7 @@
     float averageLevel;
     int averageStep;
 }
-@property (weak, nonatomic) IBOutlet UIButton *calibrateButton;
+@property (weak, nonatomic) IBOutlet UIGlossyButton *calibrateButton;
 - (IBAction)durationChanged:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *levelLabel;
 

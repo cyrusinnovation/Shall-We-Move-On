@@ -15,6 +15,9 @@
 
 @implementation ListeningViewController
 
+@synthesize needleImageView;
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,6 +31,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"back.png"]];
+    self.view.backgroundColor = background;
+    
+    
     NSURL *url = [NSURL fileURLWithPath:@"/dev/null"];
     
   	NSDictionary *settings = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -43,6 +50,17 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     averageLevel = [defaults floatForKey:@"calibratedAverageLevel"];
+    
+    
+    UIImageView *imgNeedle = [[UIImageView alloc]initWithFrame:CGRectMake(143,155, 22, 84)];
+    self.needleImageView = imgNeedle;
+    
+    self.needleImageView.layer.anchorPoint = CGPointMake(self.needleImageView.layer.anchorPoint.x, self.needleImageView.layer.anchorPoint.y*2);     self.needleImageView.backgroundColor = [UIColor clearColor];
+    self.needleImageView.image = [UIImage imageNamed:@"arrow.png"];
+    [self.view addSubview:self.needleImageView];
+
+    
+    [self rotateIt:50];
     
     
   	if (recorder) {
@@ -67,7 +85,9 @@
     
     float averagePower = [recorder averagePowerForChannel:0];
     progressLevel = (160 - abs(averagePower)) * 0.006;
-    NSLog(@"power: %f, level: %f", averagePower, averageLevel);
+   // NSLog(@"power: %f, level: %f", averagePower, averageLevel);
+    
+    [self rotateIt:averagePower];
     
     self.listeningLevel.progress = progressLevel;
     
@@ -95,6 +115,15 @@
 }
 
 
+-(void) rotateIt:(float)angl
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.01f];
+  
+    [self.needleImageView setTransform: CGAffineTransformMakeRotation((M_PI / 180) *angl)];
+   
+    [UIView commitAnimations];
+}
 
 
 

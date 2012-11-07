@@ -14,6 +14,10 @@
 		3658FE8F1642F4B3007C96AB /* ListeningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3658FE8E1642F4B3007C96AB /* ListeningView.m */; };
 		3658FE911643234F007C96AB /* shwm.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 3658FE901643234F007C96AB /* shwm.aiff */; };
 		3658FE93164978B2007C96AB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3658FE92164978B2007C96AB /* AudioToolbox.framework */; };
+		3658FE9C164AE7A9007C96AB /* UIGlossyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3658FE9B164AE7A9007C96AB /* UIGlossyButton.m */; };
+		3658FE9F164AEB67007C96AB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3658FE9E164AEB67007C96AB /* MainViewController.m */; };
+		3658FEA1164B0A8F007C96AB /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3658FEA0164B0A8F007C96AB /* arrow.png */; };
+		3658FEA3164B0E91007C96AB /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3658FEA2164B0E90007C96AB /* back.png */; };
 		366738A3163B14AC00F76780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A2163B14AC00F76780 /* UIKit.framework */; };
 		366738A5163B14AC00F76780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A4163B14AC00F76780 /* Foundation.framework */; };
 		366738A7163B14AC00F76780 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A6163B14AC00F76780 /* CoreGraphics.framework */; };
@@ -53,6 +57,12 @@
 		3658FE8E1642F4B3007C96AB /* ListeningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListeningView.m; sourceTree = "<group>"; };
 		3658FE901643234F007C96AB /* shwm.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = shwm.aiff; sourceTree = "<group>"; };
 		3658FE92164978B2007C96AB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3658FE9A164AE7A9007C96AB /* UIGlossyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIGlossyButton.h; sourceTree = "<group>"; };
+		3658FE9B164AE7A9007C96AB /* UIGlossyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIGlossyButton.m; sourceTree = "<group>"; };
+		3658FE9D164AEB66007C96AB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		3658FE9E164AEB67007C96AB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		3658FEA0164B0A8F007C96AB /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = ../../../../Downloads/SpeedometerDemo/Images/arrow.png; sourceTree = "<group>"; };
+		3658FEA2164B0E90007C96AB /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../../../../Downloads/back.png; sourceTree = "<group>"; };
 		3667389E163B14AB00F76780 /* Shall we move on.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shall we move on.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		366738A2163B14AC00F76780 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		366738A4163B14AC00F76780 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -150,6 +160,10 @@
 				3658FE8B1642DBFC007C96AB /* ListeningViewController.m */,
 				3658FE8D1642F4B3007C96AB /* ListeningView.h */,
 				3658FE8E1642F4B3007C96AB /* ListeningView.m */,
+				3658FE9A164AE7A9007C96AB /* UIGlossyButton.h */,
+				3658FE9B164AE7A9007C96AB /* UIGlossyButton.m */,
+				3658FE9D164AEB66007C96AB /* MainViewController.h */,
+				3658FE9E164AEB67007C96AB /* MainViewController.m */,
 			);
 			path = "Shall we move on";
 			sourceTree = "<group>";
@@ -157,6 +171,7 @@
 		366738A9163B14AC00F76780 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3658FEA0164B0A8F007C96AB /* arrow.png */,
 				3658FE901643234F007C96AB /* shwm.aiff */,
 				3658FE801641C6B2007C96AB /* whiteButton.png */,
 				3658FE7D16417696007C96AB /* blueButton.png */,
@@ -164,6 +179,7 @@
 				366738AB163B14AC00F76780 /* InfoPlist.strings */,
 				366738AE163B14AC00F76780 /* main.m */,
 				366738B0163B14AC00F76780 /* Shall we move on-Prefix.pch */,
+				3658FEA2164B0E90007C96AB /* back.png */,
 				366738B4163B14AC00F76780 /* Default.png */,
 				366738B6163B14AC00F76780 /* Default@2x.png */,
 				366738B8163B14AC00F76780 /* Default-568h@2x.png */,
@@ -270,6 +286,8 @@
 				3658FE7E16417696007C96AB /* blueButton.png in Resources */,
 				3658FE811641C6B2007C96AB /* whiteButton.png in Resources */,
 				3658FE911643234F007C96AB /* shwm.aiff in Resources */,
+				3658FEA1164B0A8F007C96AB /* arrow.png in Resources */,
+				3658FEA3164B0E91007C96AB /* back.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +327,8 @@
 				366738C2163B14AC00F76780 /* CalibrateViewController.m in Sources */,
 				3658FE8C1642DBFC007C96AB /* ListeningViewController.m in Sources */,
 				3658FE8F1642F4B3007C96AB /* ListeningView.m in Sources */,
+				3658FE9C164AE7A9007C96AB /* UIGlossyButton.m in Sources */,
+				3658FE9F164AEB67007C96AB /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

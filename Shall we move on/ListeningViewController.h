@@ -14,14 +14,20 @@
     AVAudioRecorder *recorder;
     NSTimer *levelTimer;
     NSTimer *timeoutTimer;
+    UIImageView *needleImageView;
     float timeout;
     float averageLevel;
 }
 
 - (void)levelTimerCallback:(NSTimer *)timer;
 - (void)timeoutTimerCallback:(NSTimer *)timer;
+-(void) rotateIt:(float)angl;
+
+
 
 @property (weak, nonatomic) IBOutlet UIProgressView *timeoutLevel;
+@property(nonatomic,retain) UIImageView *needleImageView;
+
 
 @property (weak, nonatomic) IBOutlet UIProgressView *listeningLevel;
 @end
