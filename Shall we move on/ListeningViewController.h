@@ -27,7 +27,6 @@
 
 @property (weak, nonatomic) IBOutlet UIProgressView *timeoutLevel;
 @property(nonatomic,retain) UIImageView *needleImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *vuMeter;
 
-
-@property (weak, nonatomic) IBOutlet UIProgressView *listeningLevel;
 @end

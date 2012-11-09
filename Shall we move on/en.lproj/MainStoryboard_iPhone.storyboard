@@ -74,26 +74,37 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3n2-dh-uh3"/>
                             <progressView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vsb-Jl-i6v">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="DEN-Mm-UQb"/>
                                 </constraints>
                             </progressView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="vumeter.png" translatesAutoresizingMaskIntoConstraints="NO" id="ngR-Eg-MaY">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="X6f-GW-aVH"/>
+                                    <constraint firstAttribute="height" constant="128" id="mzm-Z0-7VX"/>
+                                </constraints>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rf3-Jg-b8Q" customClass="ThemedUISlider">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="265" id="cfb-LP-Pgd"/>
+                                </constraints>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Vsb-Jl-i6v" firstAttribute="leading" secondItem="3n2-dh-uh3" secondAttribute="leading" type="default" id="5qp-ym-7Yr"/>
-                            <constraint firstAttribute="bottom" secondItem="3n2-dh-uh3" secondAttribute="bottom" constant="158" id="CPC-fo-9Xj"/>
-                            <constraint firstItem="Vsb-Jl-i6v" firstAttribute="top" secondItem="jVl-cD-Hfp" secondAttribute="top" constant="139" id="f89-Kn-8oe"/>
-                            <constraint firstItem="Vsb-Jl-i6v" firstAttribute="centerX" secondItem="jVl-cD-Hfp" secondAttribute="centerX" type="default" id="fVa-4k-w5w"/>
-                            <constraint firstItem="Vsb-Jl-i6v" firstAttribute="trailing" secondItem="3n2-dh-uh3" secondAttribute="trailing" type="default" id="kNl-Ai-uvX"/>
+                            <constraint firstAttribute="bottom" secondItem="Vsb-Jl-i6v" secondAttribute="bottom" constant="42" id="CPE-Vp-l6v"/>
+                            <constraint firstItem="Rf3-Jg-b8Q" firstAttribute="centerX" secondItem="jVl-cD-Hfp" secondAttribute="centerX" type="default" id="Iyu-3l-5q6"/>
+                            <constraint firstItem="Rf3-Jg-b8Q" firstAttribute="top" secondItem="jVl-cD-Hfp" secondAttribute="top" constant="165" id="OZI-bc-tqM"/>
+                            <constraint firstItem="ngR-Eg-MaY" firstAttribute="top" secondItem="jVl-cD-Hfp" secondAttribute="top" constant="20" symbolic="YES" type="default" id="OsM-i1-pQy"/>
+                            <constraint firstItem="Rf3-Jg-b8Q" firstAttribute="centerX" secondItem="Vsb-Jl-i6v" secondAttribute="centerX" type="default" id="xTG-4h-N3g"/>
+                            <constraint firstItem="Rf3-Jg-b8Q" firstAttribute="centerX" secondItem="ngR-Eg-MaY" secondAttribute="centerX" type="default" id="xrN-IV-zQx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Listening" id="X74-Vf-ehd"/>
                     <connections>
-                        <outlet property="listeningLevel" destination="3n2-dh-uh3" id="KbW-kU-BOE"/>
                         <outlet property="timeoutLevel" destination="Vsb-Jl-i6v" id="AJt-hy-RoZ"/>
+                        <outlet property="vuMeter" destination="ngR-Eg-MaY" id="aWY-8d-QcK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3Y-F2-Pbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,6 +191,9 @@
             <point key="canvasLocation" x="-344" y="-247"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="vumeter.png" width="300" height="164"/>
+    </resources>
     <classes>
         <class className="CalibrateViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CalibrateViewController.h"/>
@@ -198,8 +212,8 @@
         <class className="ListeningViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ListeningViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="listeningLevel" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="timeoutLevel" candidateClass="UIProgressView"/>
+                <relationship kind="outlet" name="vuMeter" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="MainViewController" superclassName="UIViewController">
@@ -211,6 +225,9 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ThemedUISlider" superclassName="UISlider">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ThemedUISlider.h"/>
         </class>
         <class className="UIGlossyButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UIGlossyButton.h"/>

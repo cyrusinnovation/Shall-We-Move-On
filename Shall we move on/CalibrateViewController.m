@@ -17,7 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"back"]];
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Default.png"]];
     self.view.backgroundColor = background;
     [self.calibrateButton setActionSheetButtonWithColor: [UIColor doneButtonColor]];
     

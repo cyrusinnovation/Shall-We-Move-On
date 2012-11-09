@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"back.png"]];
+    UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Default.png"]];
     self.view.backgroundColor = background;
     
     
@@ -51,12 +51,15 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     averageLevel = [defaults floatForKey:@"calibratedAverageLevel"];
     
+    UIImageView *imgNeedle = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.center.x,
+                                                                          100,
+                                                                          10,
+                                                                          65)];
     
-    UIImageView *imgNeedle = [[UIImageView alloc]initWithFrame:CGRectMake(143,155, 22, 84)];
     self.needleImageView = imgNeedle;
     
     self.needleImageView.layer.anchorPoint = CGPointMake(self.needleImageView.layer.anchorPoint.x, self.needleImageView.layer.anchorPoint.y*2);     self.needleImageView.backgroundColor = [UIColor clearColor];
-    self.needleImageView.image = [UIImage imageNamed:@"arrow.png"];
+    self.needleImageView.image = [UIImage imageNamed:@"arrow2.png"];
     [self.view addSubview:self.needleImageView];
 
     
@@ -88,9 +91,7 @@
    // NSLog(@"power: %f, level: %f", averagePower, averageLevel);
     
     [self rotateIt:averagePower];
-    
-    self.listeningLevel.progress = progressLevel;
-    
+        
     if (averagePower < averageLevel) {
         self.timeoutLevel.progress += 0.005;
     } else {

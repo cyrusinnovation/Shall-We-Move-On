@@ -18,6 +18,11 @@
 		3658FE9F164AEB67007C96AB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3658FE9E164AEB67007C96AB /* MainViewController.m */; };
 		3658FEA1164B0A8F007C96AB /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3658FEA0164B0A8F007C96AB /* arrow.png */; };
 		3658FEA3164B0E91007C96AB /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3658FEA2164B0E90007C96AB /* back.png */; };
+		3658FEA5164D9DBD007C96AB /* vumeter.png in Resources */ = {isa = PBXBuildFile; fileRef = 3658FEA4164D9DBD007C96AB /* vumeter.png */; };
+		3658FEA7164D9FEA007C96AB /* arrow2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3658FEA6164D9FEA007C96AB /* arrow2.png */; };
+		3658FEA9164DACA9007C96AB /* sliderBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 3658FEA8164DACA9007C96AB /* sliderBack.png */; };
+		3658FEAC164DAD51007C96AB /* ThemedUISlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3658FEAB164DAD51007C96AB /* ThemedUISlider.m */; };
+		3658FEAE164DAE2D007C96AB /* sliderThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 3658FEAD164DAE2D007C96AB /* sliderThumb.png */; };
 		366738A3163B14AC00F76780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A2163B14AC00F76780 /* UIKit.framework */; };
 		366738A5163B14AC00F76780 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A4163B14AC00F76780 /* Foundation.framework */; };
 		366738A7163B14AC00F76780 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366738A6163B14AC00F76780 /* CoreGraphics.framework */; };
@@ -63,6 +68,12 @@
 		3658FE9E164AEB67007C96AB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3658FEA0164B0A8F007C96AB /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = ../../../../Downloads/SpeedometerDemo/Images/arrow.png; sourceTree = "<group>"; };
 		3658FEA2164B0E90007C96AB /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../../../../Downloads/back.png; sourceTree = "<group>"; };
+		3658FEA4164D9DBD007C96AB /* vumeter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vumeter.png; sourceTree = "<group>"; };
+		3658FEA6164D9FEA007C96AB /* arrow2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow2.png; sourceTree = "<group>"; };
+		3658FEA8164DACA9007C96AB /* sliderBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sliderBack.png; sourceTree = "<group>"; };
+		3658FEAA164DAD51007C96AB /* ThemedUISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemedUISlider.h; sourceTree = "<group>"; };
+		3658FEAB164DAD51007C96AB /* ThemedUISlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemedUISlider.m; sourceTree = "<group>"; };
+		3658FEAD164DAE2D007C96AB /* sliderThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sliderThumb.png; sourceTree = "<group>"; };
 		3667389E163B14AB00F76780 /* Shall we move on.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shall we move on.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		366738A2163B14AC00F76780 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		366738A4163B14AC00F76780 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -164,6 +175,8 @@
 				3658FE9B164AE7A9007C96AB /* UIGlossyButton.m */,
 				3658FE9D164AEB66007C96AB /* MainViewController.h */,
 				3658FE9E164AEB67007C96AB /* MainViewController.m */,
+				3658FEAA164DAD51007C96AB /* ThemedUISlider.h */,
+				3658FEAB164DAD51007C96AB /* ThemedUISlider.m */,
 			);
 			path = "Shall we move on";
 			sourceTree = "<group>";
@@ -171,6 +184,10 @@
 		366738A9163B14AC00F76780 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3658FEAD164DAE2D007C96AB /* sliderThumb.png */,
+				3658FEA8164DACA9007C96AB /* sliderBack.png */,
+				3658FEA6164D9FEA007C96AB /* arrow2.png */,
+				3658FEA4164D9DBD007C96AB /* vumeter.png */,
 				3658FEA0164B0A8F007C96AB /* arrow.png */,
 				3658FE901643234F007C96AB /* shwm.aiff */,
 				3658FE801641C6B2007C96AB /* whiteButton.png */,
@@ -288,6 +305,10 @@
 				3658FE911643234F007C96AB /* shwm.aiff in Resources */,
 				3658FEA1164B0A8F007C96AB /* arrow.png in Resources */,
 				3658FEA3164B0E91007C96AB /* back.png in Resources */,
+				3658FEA5164D9DBD007C96AB /* vumeter.png in Resources */,
+				3658FEA7164D9FEA007C96AB /* arrow2.png in Resources */,
+				3658FEA9164DACA9007C96AB /* sliderBack.png in Resources */,
+				3658FEAE164DAE2D007C96AB /* sliderThumb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +350,7 @@
 				3658FE8F1642F4B3007C96AB /* ListeningView.m in Sources */,
 				3658FE9C164AE7A9007C96AB /* UIGlossyButton.m in Sources */,
 				3658FE9F164AEB67007C96AB /* MainViewController.m in Sources */,
+				3658FEAC164DAD51007C96AB /* ThemedUISlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
