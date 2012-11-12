@@ -15,8 +15,6 @@
 
 @implementation ListeningViewController
 
-@synthesize needleImageView;
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,6 +23,28 @@
         // Custom initialization
     }
     return self;
+}
+
+- (UIImageView *)initializeArrow:(UIImageView *) imageView fileName:(NSString *) fileName
+{
+    UIImageView *imgNeedle = [[UIImageView alloc]initWithFrame:CGRectMake(162,
+                                                                          79,
+                                                                          10,
+                                                                          45)];
+    
+    imageView = imgNeedle;
+    
+    imageView.layer.anchorPoint = CGPointMake(imageView.layer.anchorPoint.x,
+                                              imageView.layer.anchorPoint.y*2.68);
+    imageView.backgroundColor = [UIColor clearColor];
+    imageView.image = [UIImage imageNamed: fileName];
+    
+    [self.view addSubview:imageView];
+    
+    
+    [self rotateIt:[self dbToGauge:averageLevel] image:imageView];
+    
+    return imageView;
 }
 
 - (void)viewDidLoad
@@ -51,28 +71,18 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     averageLevel = [defaults floatForKey:@"calibratedAverageLevel"];
     
-    UIImageView *imgNeedle = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.center.x,
-                                                                          100,
-                                                                          10,
-                                                                          65)];
+    self.calibrationSlider.value = averageLevel;
     
-    self.needleImageView = imgNeedle;
+    needleImageView = [self initializeArrow:needleImageView fileName:@"arrow2.png"];
+    redNeedleImageView =[self initializeArrow:redNeedleImageView fileName:@"redarrow.png"];
     
-    self.needleImageView.layer.anchorPoint = CGPointMake(self.needleImageView.layer.anchorPoint.x, self.needleImageView.layer.anchorPoint.y*2);     self.needleImageView.backgroundColor = [UIColor clearColor];
-    self.needleImageView.image = [UIImage imageNamed:@"arrow2.png"];
-    [self.view addSubview:self.needleImageView];
 
-    
-    [self rotateIt:50];
-    
     
   	if (recorder) {
   		[recorder prepareToRecord];
   		recorder.meteringEnabled = YES;
   		[recorder record];
-        levelTimer = [NSTimer scheduledTimerWithTimeInterval: 0.03 target: self selector: @selector(levelTimerCallback:) userInfo: nil repeats: YES];
         
-        timeoutTimer = [NSTimer scheduledTimerWithTimeInterval: 0.25 target: self selector: @selector(timeoutTimerCallback:) userInfo: nil repeats: YES];
         
 
   	} else
@@ -88,9 +98,9 @@
     
     float averagePower = [recorder averagePowerForChannel:0];
     progressLevel = (160 - abs(averagePower)) * 0.006;
-   // NSLog(@"power: %f, level: %f", averagePower, averageLevel);
+   //NSLog(@"power: %f, level: %f", averagePower, averageLevel);
     
-    [self rotateIt:averagePower];
+    [self rotateIt:[self dbToGauge:averagePower] image: needleImageView];
         
     if (averagePower < averageLevel) {
         self.timeoutLevel.progress += 0.005;
@@ -116,17 +126,25 @@
 }
 
 
--(void) rotateIt:(float)angl
+-(void) rotateIt:(float)angl image:(UIImageView *)needle
 {
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.01f];
   
-    [self.needleImageView setTransform: CGAffineTransformMakeRotation((M_PI / 180) *angl)];
+    [needle setTransform: CGAffineTransformMakeRotation((M_PI / 180) *angl)];
    
     [UIView commitAnimations];
 }
 
+- (IBAction)calibrationSliderChanged:(id)sender {
+    averageLevel = self.calibrationSlider.value;
+    [self rotateIt: [self dbToGauge:averageLevel] image:redNeedleImageView];
+}
 
+
+- (float)dbToGauge:(float)value {
+    return value+60;
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -135,4 +153,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)startButton:(id)sender {
+    levelTimer = [NSTimer scheduledTimerWithTimeInterval: 0.03 target: self selector: @selector(levelTimerCallback:) userInfo: nil repeats: YES];
+    
+    timeoutTimer = [NSTimer scheduledTimerWithTimeInterval: 0.25 target: self selector: @selector(timeoutTimerCallback:) userInfo: nil repeats: YES];
+}
 @end

@@ -1,77 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="03n-jE-H0m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BHQ-65-eea">
     <dependencies>
         <development version="4500" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
-        <scene sceneID="p0g-Pt-Mr2">
-            <objects>
-                <viewController id="4ja-EM-nEx" customClass="MainViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aZb-GU-DSd">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtO-6j-Chc" customClass="UIGlossyButton">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="FVL-AS-dO7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Calibrate">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="2" kind="push" id="a7E-MB-Jzj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ips-IB-Ajh" customClass="UIGlossyButton">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="3vv-Gf-AMy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Listen">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BHQ-65-eea" kind="push" id="5jT-Ck-bqf"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="PtO-6j-Chc" firstAttribute="leading" secondItem="aZb-GU-DSd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="84W-Cu-DRA"/>
-                            <constraint firstAttribute="trailing" secondItem="Ips-IB-Ajh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Brf-5v-LEo"/>
-                            <constraint firstItem="Ips-IB-Ajh" firstAttribute="leading" secondItem="aZb-GU-DSd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="clT-G9-T5B"/>
-                            <constraint firstAttribute="bottom" secondItem="Ips-IB-Ajh" secondAttribute="bottom" constant="124" id="fPf-zd-2Uz"/>
-                            <constraint firstAttribute="trailing" secondItem="PtO-6j-Chc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tB6-4N-zUl"/>
-                            <constraint firstItem="PtO-6j-Chc" firstAttribute="top" secondItem="aZb-GU-DSd" secondAttribute="top" constant="96" id="zAJ-Z4-fB5"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="RWY-dU-q0q"/>
-                    <connections>
-                        <outlet property="calibrateButton" destination="PtO-6j-Chc" id="dkI-Cs-AL2"/>
-                        <outlet property="listenButton" destination="Ips-IB-Ajh" id="oeR-WC-hui"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uba-Dz-JRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="182" y="-247"/>
-        </scene>
         <!--Listening View Controller - Listening-->
         <scene sceneID="6Gs-nU-LwA">
             <objects>
                 <viewController id="BHQ-65-eea" customClass="ListeningViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jVl-cD-Hfp" customClass="ListeningView">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vsb-Jl-i6v">
@@ -85,24 +24,47 @@
                                     <constraint firstAttribute="height" constant="128" id="mzm-Z0-7VX"/>
                                 </constraints>
                             </imageView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rf3-Jg-b8Q" customClass="ThemedUISlider">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="-80" minValue="-120" maxValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="Rf3-Jg-b8Q" customClass="ThemedUISlider">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="265" id="cfb-LP-Pgd"/>
+                                    <constraint firstAttribute="width" constant="265" id="NE9-mP-Hfb"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="calibrationSliderChanged:" destination="BHQ-65-eea" eventType="valueChanged" id="rcT-OX-3bC"/>
+                                </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNe-tQ-1Cu" customClass="UIThemedButton">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="EeD-GD-Sd2"/>
+                                    <constraint firstAttribute="height" constant="100" id="Kwn-kr-Ujc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButton:" destination="BHQ-65-eea" eventType="touchUpInside" id="rvP-u6-C2S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Vsb-Jl-i6v" secondAttribute="bottom" constant="42" id="CPE-Vp-l6v"/>
-                            <constraint firstItem="Rf3-Jg-b8Q" firstAttribute="centerX" secondItem="jVl-cD-Hfp" secondAttribute="centerX" type="default" id="Iyu-3l-5q6"/>
+                            <constraint firstAttribute="trailing" secondItem="WNe-tQ-1Cu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="G2Y-FV-KXv"/>
+                            <constraint firstItem="ngR-Eg-MaY" firstAttribute="centerX" secondItem="Rf3-Jg-b8Q" secondAttribute="centerX" type="default" id="GEj-TV-Ifc"/>
+                            <constraint firstItem="Rf3-Jg-b8Q" firstAttribute="leading" secondItem="Vsb-Jl-i6v" secondAttribute="leading" type="default" id="LCN-ac-0Db"/>
+                            <constraint firstAttribute="bottom" secondItem="WNe-tQ-1Cu" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="NeY-uv-zQ9"/>
                             <constraint firstItem="Rf3-Jg-b8Q" firstAttribute="top" secondItem="jVl-cD-Hfp" secondAttribute="top" constant="165" id="OZI-bc-tqM"/>
                             <constraint firstItem="ngR-Eg-MaY" firstAttribute="top" secondItem="jVl-cD-Hfp" secondAttribute="top" constant="20" symbolic="YES" type="default" id="OsM-i1-pQy"/>
-                            <constraint firstItem="Rf3-Jg-b8Q" firstAttribute="centerX" secondItem="Vsb-Jl-i6v" secondAttribute="centerX" type="default" id="xTG-4h-N3g"/>
-                            <constraint firstItem="Rf3-Jg-b8Q" firstAttribute="centerX" secondItem="ngR-Eg-MaY" secondAttribute="centerX" type="default" id="xrN-IV-zQx"/>
+                            <constraint firstItem="ngR-Eg-MaY" firstAttribute="centerX" secondItem="jVl-cD-Hfp" secondAttribute="centerX" type="default" id="VdG-vA-4Hb"/>
+                            <constraint firstAttribute="bottom" secondItem="Vsb-Jl-i6v" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ZQW-SS-Muy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Listening" id="X74-Vf-ehd"/>
                     <connections>
+                        <outlet property="calibrationSlider" destination="Rf3-Jg-b8Q" id="uiY-ql-Sz0"/>
                         <outlet property="timeoutLevel" destination="Vsb-Jl-i6v" id="AJt-hy-RoZ"/>
                         <outlet property="vuMeter" destination="ngR-Eg-MaY" id="aWY-8d-QcK"/>
                     </connections>
@@ -116,7 +78,7 @@
             <objects>
                 <viewController id="2" customClass="CalibrateViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z92-v2-5Pw" customClass="UIGlossyButton">
@@ -182,9 +144,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="4ja-EM-nEx" kind="relationship" relationship="rootViewController" id="ojV-9l-OuU"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAT-dh-lKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -192,7 +151,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="vumeter.png" width="300" height="164"/>
+        <image name="vumeter.png" width="282" height="146"/>
     </resources>
     <classes>
         <class className="CalibrateViewController" superclassName="UIViewController">
@@ -212,15 +171,11 @@
         <class className="ListeningViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ListeningViewController.h"/>
             <relationships>
+                <relationship kind="action" name="calibrationSliderChanged:"/>
+                <relationship kind="action" name="startButton:"/>
+                <relationship kind="outlet" name="calibrationSlider" candidateClass="ThemedUISlider"/>
                 <relationship kind="outlet" name="timeoutLevel" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="vuMeter" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="calibrateButton" candidateClass="UIGlossyButton"/>
-                <relationship kind="outlet" name="listenButton" candidateClass="UIGlossyButton"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -231,6 +186,9 @@
         </class>
         <class className="UIGlossyButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UIGlossyButton.h"/>
+        </class>
+        <class className="UIThemedButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIThemedButton.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
