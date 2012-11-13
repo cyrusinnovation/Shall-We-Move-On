@@ -54,7 +54,7 @@
         [levelTimer invalidate];
         startA = TRUE;
         counterA = 10;
-        
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
     
 }
